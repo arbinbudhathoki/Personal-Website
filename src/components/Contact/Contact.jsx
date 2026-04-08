@@ -28,7 +28,7 @@ const Contact = () => {
     {
       icon: '💻',
       text: 'GitHub',
-      href: 'https://github.com/Cheetri2058',
+      href: 'https://github.com/arbinbudhathoki',
       external: true
     }
   ]
