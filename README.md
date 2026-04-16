@@ -12,6 +12,7 @@ A modern, responsive portfolio website built with React and Vite, showcasing pro
 - **Smooth Scrolling**: Enhanced navigation experience
 - **Mobile Menu**: Hamburger menu for mobile devices
 - **Accessible**: Semantic HTML and proper ARIA labels
+- **Real-time Visitor Alerts**: Live visitor notifications with Pusher integration
 
 ## 📁 Project Structure
 
@@ -68,6 +69,53 @@ npm run build
 ```
 
 This creates an optimized production build in the `dist` folder.
+
+### Configure Real-time Visitor Alerts
+
+1. Create a `.env` file from `.env.example`
+2. Add your Pusher credentials:
+   ```
+   VITE_PUSHER_KEY=your_pusher_key
+   VITE_PUSHER_CLUSTER=your_pusher_cluster
+   VITE_PUSHER_CHANNEL=visitor-alerts
+   VITE_PUSHER_EVENT=new-visitor
+   ```
+3. Trigger a Pusher event (`new-visitor` by default) with a payload like:
+   ```json
+   {
+     "location": "Dallas, TX",
+     "page": "/"
+   }
+   ```
+4. The alert widget appears in the bottom-right corner and shows the latest visitor events in real time.
+
+### Configure Email Alert on Website View
+
+Because this project is a static website, email is sent through a webhook provider.
+
+1. Create a webhook URL using Zapier, Make, Pipedream, or a small serverless function
+2. Add these values to your `.env`:
+   ```
+   VITE_VISITOR_ALERT_WEBHOOK_URL=https://your-webhook-url
+   VITE_VISITOR_ALERT_COOLDOWN_MINUTES=60
+   ```
+3. Every new visitor session sends a POST request to your webhook with visit metadata (URL, referrer, browser, timezone, timestamp)
+4. Configure your webhook workflow to send an email to your address when it receives the event
+
+Example payload:
+```json
+{
+  "event": "website_view",
+  "message": "Someone viewed your website.",
+  "page": "/",
+  "fullUrl": "https://your-site.com/",
+  "referrer": "direct",
+  "userAgent": "Mozilla/5.0 ...",
+  "language": "en-US",
+  "timezone": "America/New_York",
+  "viewedAt": "2026-04-15T22:10:00.000Z"
+}
+```
 
 ### Preview Production Build
 
@@ -152,6 +200,7 @@ Edit the `skillCategories` array in `src/components/Skills/Skills.jsx`:
 ### Production
 - `react` - React library
 - `react-dom` - React DOM rendering
+- `pusher-js` - Realtime channel client for visitor alerts
 
 ### Development
 - `vite` - Build tool and dev server
