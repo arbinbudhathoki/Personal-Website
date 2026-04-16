@@ -40,6 +40,16 @@
     text-align: left;
 }
 
+.hero-location {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: var(--bg-tertiary);
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+}
+
 .hero-headline {
     font-size: 2rem;
     font-weight: 700;
@@ -55,8 +65,52 @@
 .hero-subheadline {
     font-size: 1.25rem;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     line-height: 1.7;
+}
+
+.hero-badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.hero-badge {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-stat {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stat-number {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.hero-stat-label {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
 }
 
 .hero-cta {
@@ -94,6 +148,15 @@
 
     .hero-subheadline {
         font-size: 1.125rem;
+    }
+
+    .hero-badges {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        text-align: left;
     }
 
     .hero-cta {

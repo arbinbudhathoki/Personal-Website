@@ -38,12 +38,31 @@ const Hero = () => {
             />
           </div>
           <div className="hero-content">
+            <p className="hero-location">Cincinnati, Ohio, USA</p>
             <h1 className="hero-headline">
               Greetings, my name is <span className="highlight">Arbin Budhathoki</span>. I am a Computer Science graduate (Cum Laude) dedicated to bridging the gap between complex IT infrastructure and actionable data insights. With a technical toolkit featuring SQL, Python, and Java, I specialize in building robust data pipelines and interactive dashboards that transform raw information into strategic decisions.
             </h1>
             <p className="hero-subheadline">
               I'm actively seeking opportunities where I can leverage my technical expertise and problem-solving skills to drive impactful solutions.
             </p>
+            <div className="hero-badges">
+              <span className="hero-badge">Open to Work</span>
+              <span className="hero-badge">Available for Opportunities</span>
+            </div>
+            <div className="hero-stats">
+              <div className="hero-stat">
+                <span className="hero-stat-number">10+</span>
+                <span className="hero-stat-label">Projects</span>
+              </div>
+              <div className="hero-stat">
+                <span className="hero-stat-number">B.S.</span>
+                <span className="hero-stat-label">Computer Science</span>
+              </div>
+              <div className="hero-stat">
+                <span className="hero-stat-number">Dec 2025</span>
+                <span className="hero-stat-label">Graduate</span>
+              </div>
+            </div>
             <div className="hero-cta">
               <a href="#projects" className="btn btn-primary" onClick={(e) => { e.preventDefault(); scrollToSection('#projects') }}>
                 View Projects

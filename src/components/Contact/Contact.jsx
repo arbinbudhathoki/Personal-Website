@@ -5,8 +5,8 @@ const Contact = () => {
   const contactLinks = [
     {
       icon: '📧',
-      text: 'arbinbudhathoki18096@gmail.com',
-      href: 'mailto:arbinbudhathoki18096@gmail.com'
+      text: 'arbin.budhathoki@outlook.com',
+      href: 'mailto:arbin.budhathoki@outlook.com'
     },
     {
       icon: '📱',
@@ -40,7 +40,7 @@ const Contact = () => {
         <div className="contact-content">
           <p className="contact-intro">Let's connect.</p>
           <p className="contact-description">
-            I'm open to full-time opportunities in data analytics, software engineering, and IT infrastructure. Let's connect and discuss how I can contribute to your team.
+            I'm based in Cincinnati, Ohio, and open to full-time opportunities in data analytics, software engineering, and IT infrastructure. Let's connect and discuss how I can contribute to your team.
           </p>
           <div className="contact-links">
             {contactLinks.map((link, index) => (
