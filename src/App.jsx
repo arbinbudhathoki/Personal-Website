@@ -8,7 +8,7 @@ import Experience from './components/Experience/Experience'
 import Education from './components/Education/Education'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
-import VisitorEmailNotifier from './components/VisitorAlerts/VisitorEmailNotifier'
+import VisitorEmailNotifier from './components/VisitorEmail/VisitorEmailNotifier'
 import './App.css'
 
 function App() {

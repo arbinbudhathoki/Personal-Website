@@ -12,7 +12,7 @@ A modern, responsive portfolio website built with React and Vite, showcasing pro
 - **Smooth Scrolling**: Enhanced navigation experience
 - **Mobile Menu**: Hamburger menu for mobile devices
 - **Accessible**: Semantic HTML and proper ARIA labels
-- **Real-time Visitor Alerts**: Live visitor notifications with Pusher integration
+- **Optional visit webhooks**: Background POST to your URL (for email via Zapier/Make/Pipedream); no visible UI
 
 ## 📁 Project Structure
 
@@ -30,7 +30,8 @@ MyWebsite/
 │   │   ├── Hero/
 │   │   ├── Navbar/
 │   │   ├── Projects/
-│   │   └── Skills/
+│   │   ├── Skills/
+│   │   └── VisitorEmail/   # Optional webhook notifier (no UI)
 │   ├── App.jsx             # Main App component
 │   ├── App.css             # App styles
 │   ├── main.jsx            # Entry point
@@ -70,26 +71,7 @@ npm run build
 
 This creates an optimized production build in the `dist` folder.
 
-### Configure Real-time Visitor Alerts
-
-1. Create a `.env` file from `.env.example`
-2. Add your Pusher credentials:
-   ```
-   VITE_PUSHER_KEY=your_pusher_key
-   VITE_PUSHER_CLUSTER=your_pusher_cluster
-   VITE_PUSHER_CHANNEL=visitor-alerts
-   VITE_PUSHER_EVENT=new-visitor
-   ```
-3. Trigger a Pusher event (`new-visitor` by default) with a payload like:
-   ```json
-   {
-     "location": "Dallas, TX",
-     "page": "/"
-   }
-   ```
-4. The alert widget appears in the bottom-right corner and shows the latest visitor events in real time.
-
-### Configure Email Alert on Website View
+### Optional: visit webhook (for email alerts)
 
 Because this project is a static website, email is sent through a webhook provider.
 
@@ -200,7 +182,6 @@ Edit the `skillCategories` array in `src/components/Skills/Skills.jsx`:
 ### Production
 - `react` - React library
 - `react-dom` - React DOM rendering
-- `pusher-js` - Realtime channel client for visitor alerts
 
 ### Development
 - `vite` - Build tool and dev server
