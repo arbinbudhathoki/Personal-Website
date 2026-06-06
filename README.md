@@ -1,6 +1,6 @@
 # Portfolio Website - React
 
-A modern, responsive portfolio website built with React and Vite, showcasing projects, skills, and experience.
+-> A modern, responsive portfolio website built with React and Vite, showcasing projects, skills, and experience.
 
 ## 🚀 Features
 
