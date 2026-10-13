@@ -1,0 +1,16 @@
+---
+description: Facts and limits for Arbin Budhathoki's portfolio
+alwaysApply: true
+---
+
+# Portfolio facts
+
+Source of truth is the resume PDF and public GitHub. Do not invent jobs, dates, tools, awards, or project results.
+
+- Name: Arbin Budhathoki. Email: budhathokiarbin4@gmail.com. Location on the page: Highland Heights, KY. Do not publish the phone number or a street address.
+- Photo: `public/profile.jpg` (smiling portrait). Hero places the name on the left and the photo on the right, close together. Image URL uses `?v=2` because the old file is cached.
+- Resume download: `/Arbin_Budhathoki_Resume.pdf`. Do not link `public/resume.pdf`.
+- Job title: Server Assembler at Jabil (May 2026–Present). Teaching role: Introduction to Linux, not Web Development.
+- Featured projects only: healthcare vitals ETL (PySpark, AWS Glue, S3), Airbnb Tableau dashboard, World Cup Next.js app. No Redshift, Athena, Azure Data Factory, Synapse, or professional Databricks. Do not publish AWS account IDs. Do not feature NKU Find It or Network Topology. World Cup has no live demo.
+- Contact question form stays last and uses mailto. Visitor email alerts stay invisible.
+- Live site: https://www.arbinbudhathoki.com.np. Push source to `main`. Publish pages only when asked, with `npm run deploy`.

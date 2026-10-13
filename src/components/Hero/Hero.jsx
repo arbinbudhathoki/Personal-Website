@@ -19,7 +19,7 @@ const Hero = () => {
         <div className="hero-wrapper">
           <div className="hero-image-container">
             <img
-              src="/profile.jpg"
+              src="/profile.jpg?v=2"
               alt="Arbin Budhathoki"
               className="hero-image"
               width="600"
