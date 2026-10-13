@@ -14,16 +14,12 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
   const closeMenu = () => {
     setIsMenuOpen(false)
   }
 
-  const handleLinkClick = (e, targetId) => {
-    e.preventDefault()
+  const handleLinkClick = (event, targetId) => {
+    event.preventDefault()
     closeMenu()
     const target = document.querySelector(targetId)
     if (target) {
@@ -35,22 +31,37 @@ const Navbar = () => {
     }
   }
 
+  const links = [
+    ['Home', '#hero'],
+    ['About', '#about'],
+    ['Projects', '#projects'],
+    ['Skills', '#skills'],
+    ['Experience', '#experience'],
+    ['Education', '#education'],
+    ['Contact', '#contact']
+  ]
+
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} aria-label="Primary">
       <div className="container">
-        <div className="nav-brand">Arbin Budhathoki</div>
+        <a className="nav-brand" href="#hero" onClick={(event) => handleLinkClick(event, '#hero')}>Arbin Budhathoki</a>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="#about" onClick={(e) => handleLinkClick(e, '#about')}>About</a></li>
-          <li><a href="#skills" onClick={(e) => handleLinkClick(e, '#skills')}>Skills</a></li>
-          <li><a href="#projects" onClick={(e) => handleLinkClick(e, '#projects')}>Projects</a></li>
-          <li><a href="#experience" onClick={(e) => handleLinkClick(e, '#experience')}>Experience</a></li>
-          <li><a href="#education" onClick={(e) => handleLinkClick(e, '#education')}>Education</a></li>
-          <li><a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Contact</a></li>
+          {links.map(([label, target]) => (
+            <li key={target}>
+              <a href={target} onClick={(event) => handleLinkClick(event, target)}>{label}</a>
+            </li>
+          ))}
+          <li className="nav-resume-item">
+            <a className="nav-resume" href="/Arbin_Budhathoki_Resume.pdf" download="Arbin_Budhathoki_Resume.pdf">
+              Download Resume
+            </a>
+          </li>
         </ul>
-        <button 
-          className="nav-toggle" 
-          onClick={toggleMenu}
+        <button
+          className="nav-toggle"
+          onClick={() => setIsMenuOpen((open) => !open)}
           aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
         >
           <span className={isMenuOpen ? 'open' : ''}></span>
           <span className={isMenuOpen ? 'open' : ''}></span>

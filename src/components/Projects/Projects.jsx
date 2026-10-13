@@ -4,35 +4,53 @@ import './Projects.css'
 const Projects = () => {
   const projects = [
     {
-      title: 'NKU Find It - Campus Lost & Found Web App',
-      description: 'Built a full-stack web app to report, search, and claim lost items across campus. Developed a React + TypeScript frontend with search and filter functionality. Implemented a Django backend with SQL database for item management and claims.',
-      technologies: ['React', 'TypeScript', 'Django', 'SQL'],
-      githubLink: '#'
+      title: 'Healthcare vitals ETL',
+      description: 'A PySpark job for AWS Glue that prepares patient monitoring files for reporting.',
+      problem: 'Vital-sign, patient, and device files were stored as separate raw CSV files and were not ready to analyze.',
+      contribution: 'I wrote the Glue script that removes duplicate readings, fills missing heart-rate and oxygen values, flags abnormal vitals, joins the three files, and writes cleaned Parquet back to Amazon S3.',
+      technologies: ['Python', 'PySpark', 'AWS Glue', 'Amazon S3'],
+      image: null,
+      imageAlt: '',
+      links: [
+        {
+          label: 'View script on GitHub',
+          href: 'https://github.com/arbinbudhathoki/2026-Soccer-WorldCup-/blob/main/healthcare-etl-job.py'
+        }
+      ]
     },
     {
-      title: 'Seattle Airbnb Pricing & Revenue Dashboard',
-      description: 'Uncovered seasonal revenue trends and property performance metrics to identify high-growth investment opportunities. Cleaned and joined datasets using Python; managed cloud storage and SQL querying via Amazon S3 and Athena.',
-      technologies: ['Tableau', 'Python', 'AWS', 'SQL'],
-      githubLink: '#',
-      tableauLink: 'https://public.tableau.com/app/profile/arbin.budhathoki/viz/AirBnBFullProject_17667062010280/Dashboard1?publish=yes'
+      title: 'Airbnb pricing dashboard',
+      description: 'A Tableau dashboard for exploring how Airbnb price relates to neighborhood and property type.',
+      problem: 'Listing data needed to be cleaned before pricing and property-type patterns were easy to see.',
+      contribution: 'I cleaned the data in SQL and Excel, then built the public Tableau dashboard. The dashboard shows that price varies by neighborhood and property type, and that entire homes tend to be priced higher than private rooms.',
+      technologies: ['SQL', 'Excel', 'Tableau'],
+      image: '/projects/airbnb.jpg',
+      imageAlt: 'Tableau dashboard of Airbnb listing prices',
+      links: [
+        {
+          label: 'View dashboard',
+          href: 'https://public.tableau.com/app/profile/arbin.budhathoki/viz/AirBnBFullProject_17667062010280/Dashboard1?publish=yes'
+        },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/arbinbudhathoki/Airbnb-data-analysis-tableau'
+        }
+      ]
     },
     {
-      title: 'Global Layoffs Data Cleaning Pipeline',
-      description: 'Automated the removal of duplicates and standardized null values, resulting in a 100% analysis-ready dataset. Applied advanced SQL techniques, including CTEs and Window Functions, to transform raw data.',
-      technologies: ['MySQL', 'Excel', 'AWS', 'SQL'],
-      githubLink: '#'
-    },
-    {
-      title: 'NKU Housing Finder - Android Application',
-      description: 'Built mobile app using MVVM architecture, LiveData, and ViewModel for efficient data handling and UI updates. Integrated housing filters, roommate matching criteria, and interactive UI components for 15,000+ potential students.',
-      technologies: ['Kotlin', 'Android', 'MVVM', 'LiveData'],
-      githubLink: '#'
-    },
-    {
-      title: 'Network Topology - Network Topology Mapper',
-      description: 'Led team in designing optimized network topology for multi-branch data flow, ensuring adherence to best practices and standards. Provided technical guidance and fostered collaboration to overcome challenges and complete project on time.',
-      technologies: ['Network Design', 'TCP/IP', 'System Architecture'],
-      githubLink: '#'
+      title: 'World Cup web application',
+      description: 'A Next.js site for World Cup history, fixtures, and match predictions.',
+      problem: 'Match history, fixtures, and fan predictions were spread across separate pages and sources.',
+      contribution: 'I built the application with Next.js and a Supabase-ready prediction and leaderboard layout. A public live demo is not deployed yet.',
+      technologies: ['Next.js', 'React', 'Supabase'],
+      image: '/projects/world-cup.jpg',
+      imageAlt: 'Screenshot of the World Cup web application',
+      links: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/arbinbudhathoki/2026-Soccer-WorldCup-'
+        }
+      ]
     }
   ]
 
@@ -40,39 +58,42 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="container">
         <h2 className="section-title">Projects</h2>
+        <p className="section-intro">Three projects with a public repository or a live dashboard.</p>
         <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div key={index} className="project-card">
+          {projects.map((project) => (
+            <article key={project.title} className="project-card">
+              {project.image && (
+                <img
+                  className="project-image"
+                  src={project.image}
+                  alt={project.imageAlt}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
+              <p className="project-description"><strong>Problem. </strong>{project.problem}</p>
+              <p className="project-description"><strong>What I did. </strong>{project.contribution}</p>
               <div className="project-tech">
-                {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="tech-tag">{tech}</span>
+                {project.technologies.map((tech) => (
+                  <span key={tech} className="tech-tag">{tech}</span>
                 ))}
               </div>
               <div className="project-links">
-                {project.tableauLink && (
-                  <a 
-                    href={project.tableauLink} 
-                    className="project-link" 
-                    target="_blank" 
+                {project.links.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="project-link"
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View Dashboard →
+                    {link.label}
                   </a>
-                )}
-                {project.githubLink && project.githubLink !== '#' && (
-                  <a 
-                    href={project.githubLink} 
-                    className="project-link" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    GitHub →
-                  </a>
-                )}
+                ))}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

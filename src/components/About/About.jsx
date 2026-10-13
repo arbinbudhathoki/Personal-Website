@@ -5,16 +5,22 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title">About</h2>
         <div className="about-content">
           <p>
-            Computer Science graduate (Cum Laude) with hands-on IT support experience in live production environments and full-stack development projects. Proficient in troubleshooting networking issues, database management, and mobile/web app development using Kotlin, React, Django, and SQL.
+            I'm a Computer Science graduate from Northern Kentucky University, where I developed a foundation in software development, databases, web technologies, and computer systems.
           </p>
           <p>
-            Specialized training in data analytics with proven ability to build data pipelines and interactive dashboards that drive decision-making. Experienced in providing Tier 1 IT support for live events, managing AV systems, and resolving hardware/software issues in high-pressure production environments.
+            My experience includes providing technical support for live broadcast operations, troubleshooting computer peripherals and network-connected equipment, supporting audiovisual systems, and working with server hardware in a production environment.
           </p>
           <p>
-            I bridge the gap between complex IT infrastructure and actionable data insights, specializing in building robust data pipelines, interactive dashboards, and full-stack applications that transform raw information into strategic decisions.
+            I'm also developing my data engineering skills through hands-on learning and projects involving SQL, Python, cloud platforms, data pipelines, and data analytics.
+          </p>
+          <p>
+            I enjoy combining problem-solving with practical technical work. My goal is to continue growing as a technology professional, contribute to meaningful projects, and build solutions that are reliable, efficient, and useful.
+          </p>
+          <p>
+            Outside of work, I enjoy learning new technologies and exploring ways to improve my technical skills.
           </p>
         </div>
       </div>

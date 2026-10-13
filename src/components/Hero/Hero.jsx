@@ -1,7 +1,5 @@
 import React from 'react'
 import './Hero.css'
-// Import your profile photo - uncomment and update the path to your actual image
-// import profilePhoto from '../../assets/images/profile.jpg'
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
@@ -15,61 +13,43 @@ const Hero = () => {
     }
   }
 
-  // Update this path to your actual profile photo
-  // Option 1: If image is in public folder, use: '/profile.jpg'
-  // Option 2: If image is in src/assets/images, import it at the top and use the imported variable
-  // Option 3: Use an external URL
-  const profilePhoto = '/profile.jpg' // Place your image in the public folder, or update this path
-
   return (
     <section id="hero" className="hero">
       <div className="container">
         <div className="hero-wrapper">
           <div className="hero-image-container">
-            <img 
-              src={profilePhoto} 
-              alt="Arbin Budhathoki - Software Engineer" 
+            <img
+              src="/profile.jpg"
+              alt="Arbin Budhathoki"
               className="hero-image"
-              loading="lazy"
-              onError={(e) => {
-                // Fallback if image doesn't exist
-                e.target.style.display = 'none'
-              }}
+              width="600"
+              height="800"
+              decoding="async"
+              fetchPriority="high"
             />
           </div>
           <div className="hero-content">
-            <p className="hero-location">Cincinnati, Ohio, USA</p>
-            <h1 className="hero-headline">
-              Greetings, my name is <span className="highlight">Arbin Budhathoki</span>. I am a Computer Science graduate (Cum Laude) dedicated to bridging the gap between complex IT infrastructure and actionable data insights. With a technical toolkit featuring SQL, Python, and Java, I specialize in building robust data pipelines and interactive dashboards that transform raw information into strategic decisions.
-            </h1>
+            <p className="hero-location">Highland Heights, Kentucky</p>
+            <h1 className="hero-name">Arbin Budhathoki</h1>
+            <p className="hero-role">Computer Science Graduate | IT Infrastructure | Data Engineering</p>
             <p className="hero-subheadline">
-              I'm actively seeking opportunities where I can leverage my technical expertise and problem-solving skills to drive impactful solutions.
+              I'm a Computer Science graduate from Northern Kentucky University with hands-on experience in IT infrastructure, technical troubleshooting, hardware support, and software development. I'm building my expertise in SQL, Python, cloud technologies, and data engineering while continuing to develop practical technical projects.
             </p>
-            <div className="hero-badges">
-              <span className="hero-badge">Open to Work</span>
-              <span className="hero-badge">Available for Opportunities</span>
-            </div>
-            <div className="hero-stats">
-              <div className="hero-stat">
-                <span className="hero-stat-number">10+</span>
-                <span className="hero-stat-label">Projects</span>
-              </div>
-              <div className="hero-stat">
-                <span className="hero-stat-number">B.S.</span>
-                <span className="hero-stat-label">Computer Science</span>
-              </div>
-              <div className="hero-stat">
-                <span className="hero-stat-number">Dec 2025</span>
-                <span className="hero-stat-label">Graduate</span>
-              </div>
-            </div>
+            <p className="hero-subheadline">
+              I'm passionate about solving technical problems, learning new technologies, and building reliable solutions that connect software, infrastructure, and data.
+            </p>
             <div className="hero-cta">
               <a href="#projects" className="btn btn-primary" onClick={(e) => { e.preventDefault(); scrollToSection('#projects') }}>
-                View Projects
+                View My Projects
               </a>
-              <a href="#contact" className="btn btn-secondary" onClick={(e) => { e.preventDefault(); scrollToSection('#contact') }}>
-                Contact Me
+              <a className="btn btn-secondary" href="/Arbin_Budhathoki_Resume.pdf" download="Arbin_Budhathoki_Resume.pdf">
+                Download Resume
               </a>
+            </div>
+            <div className="hero-links">
+              <a href="https://github.com/arbinbudhathoki" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/budhathokiarbin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="mailto:budhathokiarbin4@gmail.com">Email Me</a>
             </div>
           </div>
         </div>

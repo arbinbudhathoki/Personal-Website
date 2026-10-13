@@ -1,5 +1,9 @@
 .skills {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
+}
+
+.skills .section-title {
+    margin-bottom: 0.75rem;
 }
 
 .skills-grid {
@@ -9,16 +13,22 @@
 }
 
 .skill-category {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
     transition: var(--transition);
 }
 
 .skill-category:hover {
     box-shadow: var(--shadow-md);
-    transform: translateY(-4px);
+}
+
+.skill-note {
+    margin: -0.5rem 0 1rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }
 
 .skill-category-title {
@@ -32,6 +42,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .skill-tag {
@@ -48,7 +61,6 @@
 .skill-tag:hover {
     background-color: var(--primary-color);
     color: white;
-    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {

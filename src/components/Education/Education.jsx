@@ -15,7 +15,7 @@ const Education = () => {
             <p className="education-date">Graduated: December 2025</p>
             <div className="education-coursework">
               <p className="coursework-title">Relevant Coursework:</p>
-              <p className="coursework-list">Data Structures and Algorithm, Database Systems, Object-Oriented Programming, Mobile App Development, Software Testing and Maintenance, Software Engineering, Artificial Intelligence, Operating System, Theory of Computation</p>
+              <p className="coursework-list">Data Structures and Algorithms, Database Systems, Object-Oriented Programming, Mobile App Development, Software Engineering, Artificial Intelligence, Machine Learning</p>
             </div>
           </div>
           <div className="education-item">

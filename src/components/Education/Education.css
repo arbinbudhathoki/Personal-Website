@@ -2,6 +2,10 @@
     background-color: var(--bg-primary);
 }
 
+.education .section-title {
+    margin-bottom: 2rem;
+}
+
 .education-content {
     max-width: 900px;
     margin: 0 auto;
@@ -124,16 +128,9 @@
 }
 
 .certificate-image {
-    max-width: 100%;
+    max-width: min(100%, 640px);
     height: auto;
     border-radius: 8px;
-    box-shadow: var(--shadow-md);
-    border: 2px solid var(--border-color);
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.certificate-image:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
 }
